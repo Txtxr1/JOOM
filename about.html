@@ -37,4 +37,14 @@
     </footer>
 
 </body>
+    <div class="cursor"></div>
+<div class="background-animation"></div>
+
+<script>
+    document.addEventListener('mousemove', function(e) {
+        let cursor = document.querySelector('.cursor');
+        cursor.style.left = e.clientX + 'px';
+        cursor.style.top = e.clientY + 'px';
+    });
+</script>
 </html>
