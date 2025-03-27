@@ -254,3 +254,26 @@ footer {
     color: #fff;
     transition: all 0.3s ease;
 }
+/* Стили для кнопки переключения темы */
+.theme-toggle-button {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background-color: transparent;
+    border: 2px solid #fff;
+    color: #fff;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    z-index: 10; /* Чтобы была поверх анимации header */
+}
+
+.theme-toggle-button:hover {
+    background-color: #fff;
+    color: #000;
+}
+
+.theme-icon {
+    font-size: 1.2rem;
+}
