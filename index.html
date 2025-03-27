@@ -5,43 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mountain Adventures</title>
     <link rel="stylesheet" href="style.css">
-    <style>
-        /* Стили для "страниц" */
-        .page {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            min-height: 100vh;
-            opacity: 0;
-            visibility: hidden;
-            transition: opacity 0.5s ease-in-out, visibility 0.5s ease-in-out;
-            padding: 20px; /* Отступы для контента */
-            box-sizing: border-box; /* Чтобы padding не увеличивал ширину */
-        }
-
-        .page.active {
-            opacity: 1;
-            visibility: visible;
-        }
-
-        /* Базовые стили для ссылок */
-        nav a {
-            display: inline-block;
-            padding: 10px 20px;
-            text-decoration: none;
-            color: #fff;
-            background-color: #333;
-            border-radius: 5px;
-            transition: background-color 0.3s ease; /* Плавное изменение цвета фона */
-        }
-
-        /* Анимация при наведении на ссылки */
-        nav a:hover {
-            background-color: #555;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); /* Тень при наведении */
-        }
-    </style>
 </head>
 <body>
 
@@ -57,6 +20,7 @@
                 <li><a href="#gear" data-page="gear">Снаряжение</a></li>
                 <li><a href="#tips" data-page="tips">Советы</a></li>
                 <li><a href="#about" data-page="about">О Нас</a></li>
+                <li><a href="#readme" data-page="readme">Прочти меня</a></li>
             </ul>
         </nav>
     </header>
@@ -64,43 +28,65 @@
     <main>
         <section id="home" class="page active">
             <h1>Добро пожаловать в Mountain Adventures!</h1>
-            <p>Откройте для себя мир гор вместе с нами!</p>
+            <p>Откройте для себя мир гор вместе с нами! Приготовьтесь к захватывающим приключениям и незабываемым впечатлениям!</p>
+            <button class="action-button" data-page="destinations">Исследовать направления</button>
         </section>
 
         <section id="destinations" class="page">
             <h1>Популярные направления</h1>
-            <ul>
-                <li>Альпы: Описание Альп, фотография.</li>
-                <li>Гималаи: Описание Гималаев, фотография.</li>
-                <li>Кавказ: Описание Кавказа, фотография.</li>
-            </ul>
+            <div class="destination">
+                <h2>Альпы</h2>
+                <p>Величественные вершины и живописные пейзажи ждут вас в Альпах. Идеальное место для альпинизма и горнолыжного спорта.</p>
+                <button class="action-button" data-page="gear">Подготовка к походу</button>
+            </div>
+            <div class="destination">
+                <h2>Гималаи</h2>
+                <p>Почувствуйте себя на вершине мира, покорив Гималаи. Это вызов для самых отважных и опытных путешественников.</p>
+                <button class="action-button" data-page="gear">Подготовка к походу</button>
+            </div>
+            <div class="destination">
+                <h2>Кавказ</h2>
+                <p>Уникальная природа и богатая культура Кавказа не оставят вас равнодушными. Откройте для себя гостеприимство и красоту этого региона.</p>
+                <button class="action-button" data-page="gear">Подготовка к походу</button>
+            </div>
         </section>
 
         <section id="gear" class="page">
             <h1>Необходимое снаряжение</h1>
-            <table>
-                </tr>
-                    <tr>
-                        <td>Рюкзак</td>
-                        <td>Рюкзак объемом 60 литров</td>
+            <p>Правильно подобранное снаряжение — залог успешного и безопасного похода в горы. Вот списоктров</td>
                         <td>8000 руб.</td>
                     </tr>
-                </tbody>
+                     </tbody>
             </table>
+            <button class="action-button" data-page="tips">Полезные советы</button>
         </section>
 
         <section id="tips" class="page">
             <h1>Полезные советы</h1>
+            <p>Перед тем, как отправиться в горы, ознакомьтесь с этими полезными советами, чтобы ваше приключение было максимально приятным и безопасным:</p>
             <ul>
                 <li>Всегда сообщайте кому-нибудь о своем маршруте.</li>
                 <li>Проверяйте прогноз погоды перед выходом.</li>
                 <li>Берите с собой достаточно воды и еды.</li>
             </ul>
+            <button class="action-button" data-page="about">Подробнее о нас</button>
         </section>
 
         <section id="about" class="page">
             <h1>О Нас</h1>
-            <p>Этот сайт создан любителем гор</p>
+            <p>Этот сайт создан любителем гор, чтобы делиться своими знаниями и опытом с другими путешественниками. Мы надеемся, что наш сайт поможет вам спланировать ваше следующее незабываемое приключение в горах!</p>
+            <button class="action-button" data-page="readme">Что такое Mountain Adventures?</button>
+        </section>
+
+        <section id="readme" class="page">
+            <h1>Прочти меня (Blue Lock Edition)</h1>
+            <p>Как сказал бы Эго Джинпачи: "В мире футбола важен только один человек — эгоистичный нападающий!". Здесь, в Mountain Adventures, мы тоже ценим целеустремленность и стремление к вершинам!</p>
+            <ul>
+                <li><b>Направления:</b> Выбери свою "команду" гор и отправляйся покорять вершины!</li>
+                <li><b>Снаряжение:</b> Собери свой "идеальный состав" экипировки, чтобы стать лучшим нападающим... туристом!</li>
+                <li><b>Советы:</b> Следуй нашим советам, чтобы не оказаться "вне игры" в горах.</li>
+            </ul>
+            <button class="action-button" data-page="home">На главную</button>
         </section>
     </main>
 
@@ -112,31 +98,32 @@
         document.addEventListener('DOMContentLoaded', function() {
             const navLinks = document.querySelectorAll('nav a');
             const pages = document.querySelectorAll('.page');
+            const actionButtons = document.querySelectorAll('.action-button');
+
+            function showPage(pageId) {
+                pages.forEach(page => page.classList.remove('active'));
+                const newActive = document.getElementById(pageId);
+                newActive.classList.add('active');
+                history.pushState(null, null, '#' + pageId);
+            }
 
             navLinks.forEach(link => {
                 link.addEventListener('click', function(event) {
                     event.preventDefault();
                     const pageId = this.dataset.page;
-                    const currentActive = document.querySelector('.page.active');
+                    showPage(pageId);
+                });
+            });
 
-                    // Скрываем текущую активную страницу с анимацией
-                    currentActive.classList.remove('active');
-                    setTimeout(() => {
-                        currentActive.style.display = 'none';
-                        // Показываем новую страницу с анимацией
-                        const newActive = document.getElementById(pageId);
-                        newActive.style.display = 'block';
-                        newActive.classList.add('active');
-                        // Меняем URL
-                        history.pushState(null, null, '#' + pageId);
-                    }, 500);
-
-
+            actionButtons.forEach(button => {
+                button.addEventListener('click', function(event) {
+                    const pageId = this.dataset.page;
+                    showPage(pageId);
                 });
             });
 
             // Показываем первую страницу по умолчанию
-            document.getElementById('home').classList.add('active');
+            showPage('home');
         });
     </script>
 
