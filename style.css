@@ -2,87 +2,50 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f8f8f8;
-    color: #333;
+    background-color: #385723; /* Темно-зеленый фон */
+    color: #fff; /* Белый цвет текста */
 }
 
 header {
-    background-color: #222;
-    color: #fff;
-    padding: 10px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    background-color: #223317; /* Темно-зеленый цвет для шапки */
+    padding: 20px;
+    text-align: center; /* Выравнивание по центру */
 }
 
-.logo img {
-    height: 50px;
+.logo a {
+    font-size: 2em;
+    font-weight: bold;
+    color: #fff;
+    text-decoration: none;
 }
 
 nav ul {
     list-style: none;
     padding: 0;
     margin: 0;
-    display: flex;
+    text-align: center;
 }
 
 nav li {
-    margin-left: 20px;
-}
-
-nav a {
-    color: #fff;
-    text-decoration: none;
+    display: inline;
+    margin: 0 10px;
 }
 
 main {
     padding: 20px;
 }
 
-h1 {
-    text-align: center;
-    color: #444;
-}
-
-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-bottom: 20px;
-}
-
-th, td {
-    border: 1px solid #ddd;
-    padding: 8px;
-    text-align: left;
-}
-
-th {
-    background-color: #eee;
-}
-
-ul, ol {
-    margin-bottom: 20px;
-}
-
-img {
-    max-width: 100%;
-    height: auto;
-    margin-bottom: 10px;
-}
-
 footer {
-    background-color: #222;
+    background-color: #223317;
     color: #fff;
     text-align: center;
     padding: 10px;
-    position: fixed; /* Fix the footer to the bottom */
-    bottom: 0; /* Stick to the bottom */
-    width: 100%; /* Full width */
-}
-.page {
-    display: none; /* Скрываем все страницы по умолчанию */
+    position: fixed;
+    bottom: 0;
+    width: 100%;
 }
 
-.page.active {
-    display: block; /* Показываем активную страницу */
+h1 {
+    color: #aacc88; /* Светло-зеленый для заголовков */
+    text-align: center;
 }
