@@ -1,0 +1,42 @@
+ document.addEventListener('DOMContentLoaded', function() {
+            const navLinks = document.querySelectorAll('nav a');
+            const pages = document.querySelectorAll('.page');
+            const actionButtons = document.querySelectorAll('.action-button');
+            const placeholders = document.querySelectorAll('.placeholder');
+
+            function showPage(pageId) {
+                pages.forEach(page => page.classList.remove('active'));
+                const newActive = document.getElementById(pageId);
+                newActive.style.display = 'block';
+                newActive.classList.add('active');
+                history.pushState(null, null, '#' + pageId);
+            }
+
+            // Добавляем класс 'appeared' к черным квадратам
+            function animatePlaceholders() {
+                placeholders.forEach(placeholder => {
+                    placeholder.classList.add('appeared');
+                });
+            }
+
+            navLinks.forEach(link => {
+                link.addEventListener('click', function(event) {
+                    event.preventDefault();
+                    const pageId = this.dataset.page;
+                    showPage(pageId);
+                });
+            });
+
+            actionButtons.forEach(button => {
+                button.addEventListener('click', function(event) {
+                    const pageId = this.dataset.page;
+                    showPage(pageId);
+                });
+            });
+
+            // Показываем первую страницу по умолчанию
+            showPage('home');
+
+            // Запускаем анимацию появления черных квадратов
+            animatePlaceholders();
+        });
