@@ -7,30 +7,33 @@ document.addEventListener('DOMContentLoaded', function() {
     let currentTheme = localStorage.getItem('theme') || 'light'; // Получаем тему из localStorage
 
     // Функция для переключения темы
-    function setTheme(theme) {
-        currentTheme = theme;
-        localStorage.setItem('theme', theme); // Сохраняем тему в localStorage
+   // Функция для переключения темы
+function setTheme(theme) {
+    currentTheme = theme;
+    localStorage.setItem('theme', theme); // Сохраняем тему в localStorage
 
-        if (theme === 'dark') {
-            body.style.backgroundColor = '#000';
-            body.style.color = '#fff';
-             document.documentElement.style.setProperty('--text-color', '#fff');
-            document.documentElement.style.setProperty('--background-color', '#000');
-            document.documentElement.style.setProperty('--header-bg', '#111');
-            document.documentElement.style.setProperty('--button-color', '#fff');
-            document.documentElement.style.setProperty('--button-bg', '#000');
+    if (theme === 'dark') {
+        body.style.backgroundColor = '#000';
+        body.style.color = '#fff';
+        document.documentElement.style.setProperty('--text-color', '#fff');
+        document.documentElement.style.setProperty('--background-color', '#000');
+        document.documentElement.style.setProperty('--header-bg', '#111');
+        document.documentElement.style.setProperty('--button-color', '#fff');
+        document.documentElement.style.setProperty('--button-bg', '#000');
+        themeToggle.innerHTML = '<span class="theme-icon">☀️</span>'; // Солнце для темной темы
 
-        } else {
-            body.style.backgroundColor = '#fff'; // Light
-            body.style.color = '#000';
-             document.documentElement.style.setProperty('--text-color', '#000');
-            document.documentElement.style.setProperty('--background-color', '#fff');
-            document.documentElement.style.setProperty('--header-bg', '#f0f0f0');
-            document.documentElement.style.setProperty('--button-color', '#000');
-            document.documentElement.style.setProperty('--button-bg', '#ccc');
-        }
-
+    } else {
+        body.style.backgroundColor = '#fff'; // Light
+        body.style.color = '#000';
+        document.documentElement.style.setProperty('--text-color', '#000');
+        document.documentElement.style.setProperty('--background-color', '#fff');
+        document.documentElement.style.setProperty('--header-bg', '#f0f0f0');
+        document.documentElement.style.setProperty('--button-color', '#000');
+        document.documentElement.style.setProperty('--button-bg', '#ccc');
+        themeToggle.innerHTML = '<span class="theme-icon">🌙</span>'; // Луна для светлой темы
     }
+
+}
 
     // Инициализация темы при загрузке страницы
     setTheme(currentTheme);
