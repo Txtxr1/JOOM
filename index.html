@@ -35,6 +35,15 @@
     <footer>
         <p>Связь с разработчиком: <a href="mailto:zxcursed1000-7">ваш_email@example.com</a></p>
     </footer>
+<div class="cursor"></div>
+<div class="background-animation"></div>
 
+<script>
+    document.addEventListener('mousemove', function(e) {
+        let cursor = document.querySelector('.cursor');
+        cursor.style.left = e.clientX + 'px';
+        cursor.style.top = e.clientY + 'px';
+    });
+</script>
 </body>
 </html>
