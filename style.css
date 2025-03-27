@@ -1,13 +1,52 @@
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
-    background-color: #000; /* Черный фон */
-    color: #fff; /* Белый текст */
+    background-color: #000;
+    color: #fff;
     line-height: 1.6;
+    overflow-x: hidden; /* Предотвращаем горизонтальную прокрутку */
+}
+
+/* Анимация фона */
+.background-animation {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"%3E%3Cdefs%3E%3ClinearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="100%"%3E%3Cstop offset="0%" style="stop-color:%23333;stop-opacity:0.3" /%3E%3Cstop offset="100%" style="stop-color:%23000;stop-opacity:0.3" /%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width="100%" height="100%" fill="url(%23gradient)" /%3E%3C/svg%3E');
+    background-size: 200% 200%;
+    opacity: 0.5;
+    mix-blend-mode: overlay; /* Эффект наложения для смешивания с фоном */
+    animation: animatedBackground 40s linear infinite;
+    pointer-events: none; /* Чтобы анимация не мешала взаимодействию с элементами */
+    z-index: -1; /* Помещаем анимацию под контент */
+}
+
+@keyframes animatedBackground {
+    0% {
+        background-position: 0% 50%;
+    }
+    100% {
+        background-position: 100% 50%;
+    }
+}
+
+/* Курсор, следующий за мышью */
+.cursor {
+    width: 20px;
+    height: 20px;
+    border: 2px solid #fff;
+    border-radius: 50%;
+    position: fixed;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    transition: transform 0.2s ease;
+    z-index: 9999;
 }
 
 header {
-    background-color: #111; /* Более темный черный */
+    background-color: #111;
     padding: 2rem;
     text-align: center;
     box-shadow: 0 4px 6px rgba(0,0,0,0.1);
@@ -39,7 +78,7 @@ header::before {
 .logo a {
     font-size: 2.5rem;
     font-weight: bold;
-    color: #fff; /* Белый текст для лого */
+    color: #fff;
     text-decoration: none;
     transition: color 0.3s ease;
     position: relative;
@@ -63,8 +102,8 @@ nav a {
     display: inline-block;
     padding: 0.75rem 1.5rem;
     text-decoration: none;
-    color: #fff; /* Белый текст для ссылок */
-    border: 2px solid #fff; /* Белая рамка */
+    color: #fff;
+    border: 2px solid #fff;
     border-radius: 0.375rem;
     transition: all 0.3s ease;
     position: relative;
@@ -78,7 +117,7 @@ nav a::before {
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(to right, #fff, #000);
+    background: #fff; /* Белый цвет для фона */
     z-index: -1;
     transform: translateX(-100%);
     transition: transform 0.5s ease;
@@ -91,36 +130,41 @@ nav a:focus::before {
 
 nav a:hover,
 nav a:focus {
-    color: #000; /* Черный текст при наведении */
+    color: #000; /* Черный цвет текста при наведении */
 }
 
 main {
     padding: 3rem;
     max-width: 800px;
     margin: 0 auto;
+    transition: all 0.3s ease;
 }
 
 .page {
     padding: 3rem;
     box-sizing: border-box;
+    transition: all 0.5s ease;
 }
 
 h1 {
-    color: #fff; /* Белый текст для заголовков */
+    color: #fff;
     font-size: 2.5rem;
     margin-bottom: 1.5rem;
     text-align: center;
+    transition: all 0.3s ease;
 }
 
 p {
     margin-bottom: 1.5rem;
     font-size: 1.125rem;
+    transition: all 0.3s ease;
 }
 
 table {
     width: 100%;
     border-collapse: collapse;
     margin-bottom: 2rem;
+    transition: all 0.3s ease;
 }
 
 th, td {
@@ -132,26 +176,30 @@ th, td {
 th {
     background-color: #222;
     font-weight: bold;
-    color: #fff; /* Белый текст для th */
+    color: #fff;
+    transition: all 0.3s ease;
 }
 
 ul {
     padding-left: 2rem;
     margin-bottom: 2rem;
+    transition: all 0.3s ease;
 }
 
 li {
     margin-bottom: 0.75rem;
+    transition: all 0.3s ease;
 }
 
 footer {
-    background-color: #111; /* Более темный черный для футера */
+    background-color: #111;
     color: #fff;
     text-align: center;
     padding: 1rem;
     position: fixed;
     bottom: 0;
     width: 100%;
+    transition: all 0.3s ease;
 }
 
 /* Черные квадраты вместо изображений */
@@ -161,11 +209,18 @@ footer {
     background-color: #000;
     border: 1px solid #fff;
     margin-bottom: 1rem;
+    opacity: 0; /* Изначально скрываем */
+    transition: opacity 1s ease; /* Плавное появление */
+}
+
+/* Добавляем класс appeared для запуска анимации */
+.placeholder.appeared {
+    opacity: 1;
 }
 
 /* Стили для action-button */
 .action-button {
-    background-color: #000; /* Черный цвет */
+    background-color: #000;
     border: 1px solid #fff;
     color: #fff;
     padding: 15px 32px;
@@ -177,6 +232,7 @@ footer {
     cursor: pointer;
     transition-duration: 0.4s;
     border-radius: 5px;
+    transition: all 0.3s ease;
 }
 
 .action-button:hover {
@@ -191,8 +247,10 @@ footer {
     border: 1px solid #555;
     border-radius: 5px;
     background-color: #111;
+    transition: all 0.3s ease;
 }
 
 .destination h2 {
     color: #fff;
+    transition: all 0.3s ease;
 }
