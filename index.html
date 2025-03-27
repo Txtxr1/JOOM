@@ -10,28 +10,28 @@
 
     <header>
         <div class="logo">
-            <a href="#home"><img src="" alt="Логотип Mountain Adventures"></a>
+            <a href="#" data-page="home"><img src="" alt="Логотип Mountain Adventures"></a>
         </div>
 
         <nav>
             <ul>
-                <li><a href="#home">Главная</a></li>
-                <li><a href="#destinations">Направления</a></li>
-                <li><a href="#gear">Снаряжение</a></li>
-                <li><a href="#tips">Советы</a></li>
-                <li><a href="#about">О Нас</a></li>
+                <li><a href="#" data-page="home">Главная</a></li>
+                <li><a href="#" data-page="destinations">Направления</a></li>
+                <li><a href="#" data-page="gear">Снаряжение</a></li>
+                <li><a href="#" data-page="tips">Советы</a></li>
+                <li><a href="#" data-page="about">О Нас</a></li>
             </ul>
         </nav>
     </header>
 
     <main>
-        <section id="home">
+        <section id="home" class="page active">
             <h1>Добро пожаловать в Mountain Adventures!</h1>
             <img src="" alt="Горный хребет">
-            <p>Откройте для себя мир гор вместе с нами! Здесь вы найдете информацию о лучших направлениях, необходимом снаряжении и полезные советы для безопасных и увлекательных путешествий.</p>
+            <p>Откройте для себя мир гор вместе с нами!</p>
         </section>
 
-        <section id="destinations">
+        <section id="destinations" class="page">
             <h1>Популярные направления</h1>
             <ul>
                 <li>Альпы: Описание Альп, фотография.</li>
@@ -40,10 +40,10 @@
             </ul>
         </section>
 
-        <section id="gear">
+        <section id="gear" class="page">
             <h1>Необходимое снаряжение</h1>
             <table>
-                </tr>
+                 </tr>
                     <tr>
                         <td>Рюкзак</td>
                         <td>Рюкзак объемом 60 литров</td>
@@ -53,7 +53,7 @@
             </table>
         </section>
 
-        <section id="tips">
+        <section id="tips" class="page">
             <h1>Полезные советы</h1>
             <ul>
                 <li>Всегда сообщайте кому-нибудь о своем маршруте.</li>
@@ -62,15 +62,38 @@
             </ul>
         </section>
 
-        <section id="about">
+        <section id="about" class="page">
             <h1>О Нас</h1>
-            <p>Этот сайт создан любителем гор, чтобы делиться своими знаниями и опытом с другими путешественниками.</p>
+            <p>Этот сайт создан любителем гор</p>
         </section>
     </main>
 
     <footer>
         <p>Связь с разработчиком: <a href="mailto:ваш_email@example.com">ваш_email@example.com</a></p>
     </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const navLinks = document.querySelectorAll('nav a');
+            const pages = document.querySelectorAll('.page');
+
+            navLinks.forEach(link => {
+                link.addEventListener('click', function(event) {
+                    event.preventDefault(); // Предотвращаем переход по ссылке
+                    const pageId = this.dataset.page;
+
+                    // Скрываем все страницы
+                    pages.forEach(page => page.classList.remove('active'));
+
+                    // Показываем выбранную страницу
+                    document.getElementById(pageId).classList.add('active');
+                });
+            });
+
+            // Показываем первую страницу по умолчанию
+            document.getElementById('home').classList.add('active');
+        });
+    </script>
 
 </body>
 </html>
