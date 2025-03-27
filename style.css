@@ -71,9 +71,26 @@ nav a {
     overflow: hidden;
 }
 
+nav a::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right, #fff, #000);
+    z-index: -1;
+    transform: translateX(-100%);
+    transition: transform 0.5s ease;
+}
+
+nav a:hover::before,
+nav a:focus::before {
+    transform: translateX(0);
+}
+
 nav a:hover,
 nav a:focus {
-    background-color: #fff;
     color: #000; /* Черный текст при наведении */
 }
 
@@ -84,22 +101,8 @@ main {
 }
 
 .page {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    min-height: 100vh;
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity 0.5s ease-in-out, visibility 0.5s ease-in-out;
     padding: 3rem;
     box-sizing: border-box;
-    background-color: #000; /* Черный фон для страниц */
-}
-
-.page.active {
-    opacity: 1;
-    visibility: visible;
 }
 
 h1 {
