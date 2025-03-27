@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>[Название Страницы] - Путешествия по России</title>
+    <title>[Название Страницы] - Кофемания</title>
     <link rel="stylesheet" href="style.css"> <!-- Подключаем CSS -->
 </head>
 <body>
@@ -16,8 +16,8 @@
         <nav>
             <ul>
                 <li><a href="index.html">Главная</a></li>
-                <li><a href="routes.html">Маршруты</a></li>
-                <li><a href="tips.html">Советы</a></li>
+                <li><a href="methods.html">Способы</a></li>
+                <li><a href="recipes.html">Рецепты</a></li>
                 <li><a href="about.html">О Нас</a></li>
             </ul>
         </nav>
@@ -32,7 +32,7 @@
     </main>
 
     <footer>
-        <p>Свяжитесь с нами: <a href="mailto:ваша_почта@example.com">ваша_почта@example.com</a></p>
+        <p>Свяжитесь с разработчиком: <a href="mailto:ваш_email@example.com">ваш_email@example.com</a></p>
     </footer>
 
 </body>
