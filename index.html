@@ -5,38 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mountain Adventures</title>
     <link rel="stylesheet" href="style.css">
-    <style>
-      .page {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        min-height: 100vh;
-        opacity: 0;
-        visibility: hidden;
-        transition: opacity 0.5s ease-in-out, visibility 0.5s ease-in-out;
-      }
-
-      .page.active {
-        opacity: 1;
-        visibility: visible;
-      }
-    </style>
 </head>
 <body>
 
     <header>
         <div class="logo">
-            <a href="#home" data-page="home"><img src="" alt="Логотип Mountain Adventures"></a>
+            <a href="#" data-page="home"><img src="" alt="Логотип Mountain Adventures"></a>
         </div>
 
         <nav>
             <ul>
-                <li><a href="#home" data-page="home">Главная</a></li>
-                <li><a href="#destinations" data-page="destinations">Направления</a></li>
-                <li><a href="#gear" data-page="gear">Снаряжение</a></li>
-                <li><a href="#tips" data-page="tips">Советы</a></li>
-                <li><a href="#about" data-page="about">О Нас</a></li>
+                <li><a href="#" data-page="home">Главная</a></li>
+                <li><a href="#" data-page="destinations">Направления</a></li>
+                <li><a href="#" data-page="gear">Снаряжение</a></li>
+                <li><a href="#" data-page="tips">Советы</a></li>
+                <li><a href="#" data-page="about">О Нас</a></li>
             </ul>
         </nav>
     </header>
@@ -60,7 +43,7 @@
         <section id="gear" class="page">
             <h1>Необходимое снаряжение</h1>
             <table>
-                </tr>
+                 </tr>
                     <tr>
                         <td>Рюкзак</td>
                         <td>Рюкзак объемом 60 литров</td>
@@ -96,23 +79,14 @@
 
             navLinks.forEach(link => {
                 link.addEventListener('click', function(event) {
-                    event.preventDefault();
+                    event.preventDefault(); // Предотвращаем переход по ссылке
                     const pageId = this.dataset.page;
-                    const currentActive = document.querySelector('.page.active');
 
-                    // Скрываем текущую активную страницу с анимацией
-                    currentActive.classList.remove('active');
-                    setTimeout(() => {
-                        currentActive.style.display = 'none';
-                        // Показываем новую страницу с анимацией
-                        const newActive = document.getElementById(pageId);
-                        newActive.style.display = 'block';
-                        newActive.classList.add('active');
-                        // Меняем URL
-                        history.pushState(null, null, '#' + pageId);
-                    }, 500);
+                    // Скрываем все страницы
+                    pages.forEach(page => page.classList.remove('active'));
 
-
+                    // Показываем выбранную страницу
+                    document.getElementById(pageId).classList.add('active');
                 });
             });
 
