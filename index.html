@@ -29,6 +29,7 @@
         <section id="home" class="page active">
             <h1>Добро пожаловать в Mountain Adventures!</h1>
             <p>Откройте для себя мир гор вместе с нами! Приготовьтесь к захватывающим приключениям и незабываемым впечатлениям!</p>
+            <div class="placeholder"></div>
             <button class="action-button" data-page="destinations">Исследовать направления</button>
         </section>
 
@@ -37,27 +38,36 @@
             <div class="destination">
                 <h2>Альпы</h2>
                 <p>Величественные вершины и живописные пейзажи ждут вас в Альпах. Идеальное место для альпинизма и горнолыжного спорта.</p>
+                <div class="placeholder"></div>
                 <button class="action-button" data-page="gear">Подготовка к походу</button>
             </div>
             <div class="destination">
                 <h2>Гималаи</h2>
                 <p>Почувствуйте себя на вершине мира, покорив Гималаи. Это вызов для самых отважных и опытных путешественников.</p>
+                <div class="placeholder"></div>
                 <button class="action-button" data-page="gear">Подготовка к походу</button>
             </div>
             <div class="destination">
                 <h2>Кавказ</h2>
                 <p>Уникальная природа и богатая культура Кавказа не оставят вас равнодушными. Откройте для себя гостеприимство и красоту этого региона.</p>
+                <div class="placeholder"></div>
                 <button class="action-button" data-page="gear">Подготовка к походу</button>
             </div>
         </section>
 
         <section id="gear" class="page">
             <h1>Необходимое снаряжение</h1>
-            <p>Правильно подобранное снаряжение — залог успешного и безопасного похода в горы. Вот списоктров</td>
+            <p>Правильно подобранное снаряжение — залог успешного и безопасного похода в горы. Вот список необходимого снаряжения:</p>
+            <table>
+                </tr>
+                    <tr>
+                        <td>Рюкзак</td>
+                        <td>Рюкзак объемом 60 литров</td>
                         <td>8000 руб.</td>
                     </tr>
                      </tbody>
             </table>
+            <div class="placeholder"></div>
             <button class="action-button" data-page="tips">Полезные советы</button>
         </section>
 
@@ -69,12 +79,14 @@
                 <li>Проверяйте прогноз погоды перед выходом.</li>
                 <li>Берите с собой достаточно воды и еды.</li>
             </ul>
+            <div class="placeholder"></div>
             <button class="action-button" data-page="about">Подробнее о нас</button>
         </section>
 
         <section id="about" class="page">
             <h1>О Нас</h1>
             <p>Этот сайт создан любителем гор, чтобы делиться своими знаниями и опытом с другими путешественниками. Мы надеемся, что наш сайт поможет вам спланировать ваше следующее незабываемое приключение в горах!</p>
+            <div class="placeholder"></div>
             <button class="action-button" data-page="readme">Что такое Mountain Adventures?</button>
         </section>
 
@@ -86,6 +98,7 @@
                 <li><b>Снаряжение:</b> Собери свой "идеальный состав" экипировки, чтобы стать лучшим нападающим... туристом!</li>
                 <li><b>Советы:</b> Следуй нашим советам, чтобы не оказаться "вне игры" в горах.</li>
             </ul>
+            <div class="placeholder"></div>
             <button class="action-button" data-page="home">На главную</button>
         </section>
     </main>
@@ -103,6 +116,7 @@
             function showPage(pageId) {
                 pages.forEach(page => page.classList.remove('active'));
                 const newActive = document.getElementById(pageId);
+                 newActive.style.display = 'block'; // Убедитесь, что блок отображается
                 newActive.classList.add('active');
                 history.pushState(null, null, '#' + pageId);
             }
