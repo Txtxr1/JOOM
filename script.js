@@ -37,7 +37,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Кнопка переключения темы
     const themeToggle = document.createElement('button');
-    themeToggle.textContent = 'Переключить тему';
+    themeToggle.innerHTML = '<span class="theme-icon">🌙</span>'; // Луна по умолчанию
     themeToggle.classList.add('theme-toggle-button');
     document.querySelector('header').appendChild(themeToggle);
 
